@@ -5,7 +5,7 @@ echo "Adding OMZ Plugins"
 echo "##################"
 
 # writing core plugins to omz
-cat >> ~/.zshrc <<EOT
+cat >> ~/.zshrc <<LMAO
 plugins=(
   aws
   colorize
@@ -17,4 +17,4 @@ plugins=(
   web-search
   zsh-interactive-cd
 )
-EOT
+LMAO
