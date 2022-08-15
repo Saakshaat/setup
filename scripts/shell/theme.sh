@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "#####################"
+echo "Theming ZSH with Pure"
+echo "#####################"
+
 # install zplug
 brew install zplug
 

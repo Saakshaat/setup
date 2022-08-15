@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "#######################"
+echo "Setting Up Iterm and Co"
+echo "#######################"
+
 # install iTerm
 brew install iterm2 --cask
 
