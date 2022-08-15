@@ -7,6 +7,12 @@ echo "####################"
 brew install zsh
 
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+## remove existing omz folder
+rm -rf ~/.oh-my-zsh 
 
-
+# we use the NO_INTERACTIVE flag
+# to prevent omz installer from
+# changing the shell to zsh after
+# install so `theme.sh` can run in
+# the same session
+NO_INTERACTIVE=true sh -c "$(curl -fsSL https://raw.githubusercontent.com/subtlepseudonym/oh-my-zsh/feature/install-noninteractive/tools/install.sh)"
