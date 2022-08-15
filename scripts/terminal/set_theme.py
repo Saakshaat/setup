@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
 
-import iterm2
+import sys
 import random
 
-async def SetPresetInSession(connection, session, preset_name):
-	preset = await iterm2.ColorPreset.async_get(connection, preset_name)
-	if not preset:
-		return
-	profile = await session.async_get_profile()
-	if not profile:
-		return
-	await profile.async_set_color_preset(preset)
+import iterm2
 
-async def main(connection):
-	app = await iterm2.async_get_app(connection)
-	presets_str = sys.argv[1]
-	presets_array = presets_str.split("\n")
-	print(presets_array)
-	async with iterm2.NewSessionMonitor(connection) as mon:
-		while True:
-			session_id = await mon.async_get()
-			session = app.get_session_by_id(session_id)
-			if session:
-				await SetPresetInSession(connection, session, random.choice(presets_array)
+PROFILES=["Default"]
 
-print("sdjfkjlfkegw")
-iterm2.run_forever(main)
+async def set_colors(conn, preset_name):
+  preset = await iterm2.ColorPreset.async_get(conn, preset_name)
+  for partial in (await iterm2.PartialProfile.async_query(conn)):
+        if partial.name in PROFILES:
+            await partial.async_set_color_preset(preset)
+
+async def set_preferences_theme(conn):
+  # set apperance theme to `minimal`
+  await iterm2.preferences.async_set_preference(conn, "TabStyleWithAutomaticOption", 5)
+
+async def main(conn):
+  presets = sys.argv[1:]
+  rand_preset = random.choice(presets)
+  await set_colors(conn, rand_preset)
+  await set_preferences_theme(conn)
+
+iterm2.run_until_complete(main)

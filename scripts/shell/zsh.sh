@@ -1,4 +1,9 @@
 #!/bin/bash
+
+echo "####################"
+echo "Installing Oh-My-ZSH"
+echo "####################"
+
 brew install zsh
 
 # oh-my-zsh
