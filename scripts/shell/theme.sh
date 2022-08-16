@@ -1,10 +1,10 @@
-#!/bin/env zsh
+#!/bin/bash
 
 echo "###########"
 echo "Theming OMZ"
 echo "###########"
 
-read -d '' THEMES <<EOF
+read -d '' THEMES <<WOWIE
 ZSH_THEME_RANDOM_CANDIDATES=(
   "robbyrussell"
   "zhann"
@@ -14,7 +14,7 @@ ZSH_THEME_RANDOM_CANDIDATES=(
   "arrow"
   "kolo"
 )
-EOF
+WOWIE
 
 # append to beginnging of file
 echo -e "$THEMES\n$(cat ~/.zshrc)" > ~/.zshrc
