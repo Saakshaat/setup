@@ -5,7 +5,7 @@ echo "Adding OMZ Plugins"
 echo "##################"
 
 # pygments for colorize
-pip3 install Pygments --user
+pip3 install Pygments
 # install thefuck
 brew install thefuck
 
@@ -20,6 +20,9 @@ plugins=(
   themes
   urltools
   web-search
-  zsh-autosuggestions
 )
 LMAO
+
+cat >> ~/.zshrc << CONFIGS
+ZSH_COLORIZE_STYLE="dracula"
+CONFIGS

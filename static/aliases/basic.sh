@@ -1,7 +1,7 @@
 # Some system stuff
 alias c="clear"
 alias please='sudo'
-#alias cat="pygmentize -g"
+alias cat=ccat
 del() {
 	rm -rf $1
 }
