@@ -1,5 +1,7 @@
 #!/bin/bash
 
-source dependencies.sh
 source plugins.sh
-source theme.sh
+source aliases.sh
+
+# activating plugins and aliases
+source ~/.zshrc
