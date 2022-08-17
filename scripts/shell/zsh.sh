@@ -12,7 +12,6 @@ rm -rf ~/.oh-my-zsh
 
 # we use the `--unattended` flag
 # to prevent omz installer from
-# changing the shell to zsh after
-# install so `theme.sh` can run in
-# the same session
+# spawning a new shell so `theme.sh`
+#can run in the same session
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
