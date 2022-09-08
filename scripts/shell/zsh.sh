@@ -15,3 +15,6 @@ rm -rf ~/.oh-my-zsh
 # spawning a new shell so `theme.sh`
 #can run in the same session
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# add homebrew to path
+export PATH=$HOME/.homebrew/bin:$PATH

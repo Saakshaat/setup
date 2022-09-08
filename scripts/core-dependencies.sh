@@ -1,7 +1,12 @@
 #!/bin/bash
 
 # installing brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+git clone https://github.com/Homebrew/brew ~/.homebrew
+eval "$(~/.homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
+
+export PATH=$HOME/
 
 # install python
 brew install python3

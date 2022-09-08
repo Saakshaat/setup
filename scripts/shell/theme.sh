@@ -16,7 +16,7 @@ ZSH_THEME_RANDOM_CANDIDATES=(
 )
 WOWIE
 
-# append to beginnging of file
+# append to beginning of file
 echo -e "$THEMES\n$(cat ~/.zshrc)" > ~/.zshrc
 
 # search and replace default theme to random
